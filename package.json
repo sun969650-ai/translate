@@ -1,0 +1,14 @@
+{
+  "name": "ai-translate-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI 智能翻译 Chrome 扩展（全页翻译 / 划词翻译 / 网页总结）",
+  "scripts": {
+    "test": "node tests/test-ai.mjs",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.49.1"
+  }
+}

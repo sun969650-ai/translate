@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 智能翻译</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5h8" /><path d="M14 5h6" /><path d="M9 3v2" />
+            <path d="M4 12h6" /><path d="M12 12h8" /><path d="M4 19h8" /><path d="M14 19h6" />
+            <path d="M20 3v18" />
+          </svg>
+        </span>
+        <div class="titles">
+          <h1>AI 智能翻译</h1>
+          <p>全页翻译 · 划词翻译 · 网页总结</p>
+        </div>
+      </div>
+      <span id="statusPill" class="pill">未配置</span>
+    </header>
+
+    <section class="actions">
+      <button class="action primary" data-action="translatePage">
+        <span class="ico">译</span>
+        <span class="label">
+          <b>翻译本页</b>
+          <i>整页中英互译</i>
+        </span>
+      </button>
+      <button class="action" data-action="restore">
+        <span class="ico">原</span>
+        <span class="label">
+          <b>恢复原文</b>
+          <i>还原页面内容</i>
+        </span>
+      </button>
+      <button class="action" data-action="translateSelection">
+        <span class="ico">划</span>
+        <span class="label">
+          <b>划词翻译</b>
+          <i>翻译选中文本</i>
+        </span>
+      </button>
+      <button class="action" data-action="summarize">
+        <span class="ico">总</span>
+        <span class="label">
+          <b>网页总结</b>
+          <i>提炼核心要点</i>
+        </span>
+      </button>
+    </section>
+
+    <section class="block">
+      <div class="block-title">语言设置</div>
+      <div class="lang-row">
+        <label class="field">
+          <span>目标语言</span>
+          <select id="targetLang"></select>
+        </label>
+        <button id="swapLang" class="ghost-btn" title="中英互换">⇄</button>
+        <label class="field">
+          <span>原文语言</span>
+          <select id="sourceLang"></select>
+        </label>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-title">接口设置（OpenAI 兼容）</div>
+      <label class="field stack">
+        <span>BaseUrl</span>
+        <input id="baseUrl" type="text" placeholder="https://api.deepseek.com" spellcheck="false" />
+      </label>
+      <label class="field stack">
+        <span>API Key</span>
+        <div class="secret">
+          <input id="apiKey" type="password" placeholder="sk-..." spellcheck="false" />
+          <button id="toggleKey" class="eye" type="button" title="显示/隐藏">👁</button>
+        </div>
+      </label>
+      <label class="field stack">
+        <span>模型</span>
+        <input id="model" type="text" placeholder="deepseek-chat" spellcheck="false" />
+      </label>
+      <div class="btn-row">
+        <button id="saveBtn" class="primary-btn">保存设置</button>
+        <button id="testBtn" class="ghost-btn">测试连接</button>
+      </div>
+    </section>
+
+    <div id="message" class="message hidden"></div>
+
+    <footer class="footer">
+      <button id="openOptions" class="link-btn">高级设置</button>
+      <span class="version">v1.0.0</span>
+    </footer>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
