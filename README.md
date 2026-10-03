@@ -54,9 +54,15 @@ shared/config.js           配置读写（chrome.storage.local）
 shared/markdown.js         极简 Markdown 渲染器（XSS 安全转义）
 popup/                     弹窗页面（快捷操作 + 接口配置）
 options/                   高级设置页
+docs/                      产品展示静态站点（自适应桌面/移动端，可部署 GitHub Pages）
 tools/gen-icons.ps1        图标生成脚本
 tests/                     Node 单测与 Edge 端到端测试
 ```
+
+## 展示站点
+
+`docs/` 为纯静态站点（无构建、无依赖），直接双击 `docs/index.html` 即可预览；
+在 GitHub 仓库中把 Pages 来源设为 `main` 分支的 `/docs` 目录即可上线。
 
 ## 隐私
 

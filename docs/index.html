@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI 智能翻译 · Chrome 扩展</title>
+<meta name="description" content="AI 智能翻译浏览器扩展：全页面翻译、划词翻译、网页总结，兼容 OpenAI 协议，支持中英互译。" />
+<meta name="theme-color" content="#4f7cff" />
+<link rel="icon" href="assets/icon.png" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#features">跳到主要内容</a>
+
+<header class="site-header" id="top">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="assets/icon.png" alt="AI 智能翻译 图标" width="36" height="36" />
+      <span class="brand-name">AI 智能翻译</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#features">核心功能</a>
+      <a href="#highlights">亮点</a>
+      <a href="#shortcuts">快捷键</a>
+      <a href="#steps">使用步骤</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">获取扩展</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <span class="badge">Chrome / Edge 扩展 · Manifest V3</span>
+        <h1>让 AI 成为你的<br /><em>阅读与翻译助手</em></h1>
+        <p class="lead">
+          全页面翻译、划词翻译、网页总结三合一。接入任意 OpenAI 兼容接口，
+          自带配置界面，中英互译，一键恢复原文。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#steps">立即使用</a>
+          <a class="btn btn-ghost" href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">查看源码</a>
+        </div>
+        <ul class="hero-meta">
+          <li>OpenAI 兼容协议</li>
+          <li>8 种目标语言</li>
+          <li>密钥本地保存</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="browser">
+          <div class="browser-bar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <div class="browser-url">example.com / article</div>
+          </div>
+          <div class="browser-body">
+            <div class="line line-title"></div>
+            <div class="src-text">Machine translation has improved dramatically with large language models.</div>
+            <div class="dst-text">随着大语言模型的发展，机器翻译质量得到了显著提升。</div>
+            <div class="line"></div>
+            <div class="line line-short"></div>
+            <div class="line"></div>
+            <div class="line line-mid"></div>
+            <div class="progress">
+              <div class="progress-bar"><i></i></div>
+              <div class="progress-text">AI 正在翻译页面…  36 / 52</div>
+            </div>
+          </div>
+        </div>
+        <div class="float-chip">译</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心功能 -->
+  <section class="section" id="features">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">核心功能</span>
+        <h2>三件事，一个扩展搞定</h2>
+        <p>覆盖读英文、看外文资料、做调研的全部日常场景。</p>
+      </header>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="card-icon">译</span>
+          <h3>全页面翻译</h3>
+          <p>自动识别网页中所有可见文本，分批并发翻译，保留 URL、邮箱与占位符。</p>
+          <ul class="ticks">
+            <li>进度条实时反馈，可随时取消</li>
+            <li>3 路并发 + 结果缓存，更快更省</li>
+            <li>一键恢复原文，页面无损还原</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">划</span>
+          <h3>划词翻译</h3>
+          <p>选中任意文字，浮出「翻译」按钮，即时查看译文，无需离开当前页面。</p>
+          <ul class="ticks">
+            <li>结果卡片含原文对照</li>
+            <li>支持复制译文、右键菜单触发</li>
+            <li>快捷键 Alt+Shift+S 随叫随到</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="card-icon">总</span>
+          <h3>网页总结</h3>
+          <p>自动提取正文要点，右侧面板输出结构化中文总结，告别长文阅读焦虑。</p>
+          <ul class="ticks">
+            <li>「一句话概要 + 核心要点」结构</li>
+            <li>简要 / 详细两种总结风格</li>
+            <li>结果可一键复制分享</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 亮点 -->
+  <section class="section section-alt" id="highlights">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">产品亮点</span>
+        <h2>为真实使用场景打磨</h2>
+        <p>不只是能跑，还要好用、安全、好看。</p>
+      </header>
+
+      <div class="grid grid-3">
+        <div class="mini">
+          <h3>接入任意兼容服务</h3>
+          <p>只要兼容 OpenAI Chat Completions 协议，填写 BaseUrl、API Key 与模型名即可使用。</p>
+        </div>
+        <div class="mini">
+          <h3>中英互译，8 种语言</h3>
+          <p>中文、English、日本語、한국어、Français、Deutsch、Español、Русский。</p>
+        </div>
+        <div class="mini">
+          <h3>密钥只存本地</h3>
+          <p>配置保存在浏览器本地存储，请求仅发往你自己的接口，不经任何第三方服务器。</p>
+        </div>
+        <div class="mini">
+          <h3>界面简洁自适应</h3>
+          <p>Popup 弹窗 + 高级设置页，明暗主题跟随系统，UI 运行在 Shadow DOM 中不干扰网页。</p>
+        </div>
+        <div class="mini">
+          <h3>大页面也稳</h3>
+          <p>长文本自动按句切分、超长段落分批请求，避免上下文溢出与错位。</p>
+        </div>
+        <div class="mini">
+          <h3>失败可恢复</h3>
+          <p>接口异常时保留原文并提示原因，翻译完成后可一键还原，不破坏页面结构。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 快捷键 + 接入 -->
+  <section class="section" id="shortcuts">
+    <div class="container two-col">
+      <div>
+        <header class="section-head left">
+          <span class="eyebrow">效率细节</span>
+          <h2>快捷键与右键菜单</h2>
+          <p>双手不用离开键盘，也可在 chrome://extensions/shortcuts 中自定义。</p>
+        </header>
+        <ul class="keys">
+          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>T</kbd></span><span>翻译当前页面</span></li>
+          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>R</kbd></span><span>恢复页面原文</span></li>
+          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>S</kbd></span><span>翻译选中文本</span></li>
+          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>G</kbd></span><span>总结当前页面</span></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <span class="eyebrow">接口配置</span>
+        <h3>三步完成接入</h3>
+        <pre class="code"><code>{
+  "baseUrl": "https://api.deepseek.com",
+  "apiKey": "sk-••••••••",
+  "model": "deepseek-chat"
+}</code></pre>
+        <p class="note">其他服务商同理，例如 <code>https://api.openai.com/v1</code>、<code>http://localhost:11434/v1</code>（本地 Ollama）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 使用步骤 -->
+  <section class="section section-alt" id="steps">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow">使用步骤</span>
+        <h2>半分钟上线</h2>
+        <p>无需构建、无需依赖，加载即用。</p>
+      </header>
+      <ol class="steps">
+        <li>
+          <span class="step-no">1</span>
+          <div>
+            <h3>加载扩展</h3>
+            <p>打开 <code>chrome://extensions/</code>，开启「开发者模式」，点击「加载已解压的扩展程序」并选择项目目录。</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-no">2</span>
+          <div>
+            <h3>填写配置</h3>
+            <p>点击工具栏图标，在弹窗中填入 BaseUrl、API Key 与模型名称，点击「测试连接」验证。</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-no">3</span>
+          <div>
+            <h3>开始使用</h3>
+            <p>打开任意网页，点击「翻译本页」；选中文字即可划词翻译；点击「网页总结」提炼要点。</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <header class="section-head">
+        <span class="eyebrow">常见问题</span>
+        <h2>你可能想知道的</h2>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>支持哪些浏览器？</summary>
+          <p>基于 Chrome Manifest V3，Chrome 与 Edge（Chromium 内核）均可直接使用；在 Edge 中需在扩展管理页开启「允许来自其他商店的扩展」。</p>
+        </details>
+        <details>
+          <summary>支持哪些模型服务？</summary>
+          <p>任何兼容 OpenAI Chat Completions 协议的服务都可以，例如 DeepSeek、OpenAI、通义千问、智谱、本地 Ollama 等，只需填写对应的 BaseUrl、API Key 与模型名。</p>
+        </details>
+        <details>
+          <summary>翻译整页会不会破坏网页排版？</summary>
+          <p>不会。插件只替换文本节点内容，不改动标签结构与样式，并保留首尾空格、URL、邮箱、代码标识符与占位符；点击「恢复原文」可立即还原。</p>
+        </details>
+        <details>
+          <summary>API Key 安全吗？</summary>
+          <p>配置保存在浏览器本地存储（chrome.storage.local），不会上传到任何第三方服务器，请求只发往你自己填写的接口地址。</p>
+        </details>
+        <details>
+          <summary>大页面翻译会花很多钱吗？</summary>
+          <p>插件采用分批并发 + 结果缓存，重复内容只请求一次；仅翻译页面上可见的文字，跳过代码块、输入框与不可见元素。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>让阅读、翻译、总结都不再费时间</h2>
+      <p>开源免费，配置自己的 API Key 即可长期使用。</p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">前往 GitHub 仓库</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>AI 智能翻译 · Chrome 扩展 · Manifest V3</p>
+    <p><a href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">github.com/sun969650-ai/translate</a></p>
+  </div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
