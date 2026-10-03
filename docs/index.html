@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AI 智能翻译 · Chrome 扩展</title>
 <meta name="description" content="AI 智能翻译浏览器扩展：全页面翻译、划词翻译、网页总结，兼容 OpenAI 协议，支持中英互译。" />
-<meta name="theme-color" content="#4f7cff" />
+<meta name="theme-color" content="#f7f4ec" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)" />
 <link rel="icon" href="assets/icon.png" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -15,8 +16,9 @@
 <header class="site-header" id="top">
   <div class="container nav">
     <a class="brand" href="#top">
-      <img src="assets/icon.png" alt="AI 智能翻译 图标" width="36" height="36" />
+      <img src="assets/icon.png" alt="" width="28" height="28" />
       <span class="brand-name">AI 智能翻译</span>
+      <span class="brand-edition">MV3</span>
     </a>
     <nav class="nav-links" aria-label="主导航">
       <a href="#features">核心功能</a>
@@ -30,65 +32,56 @@
 </header>
 
 <main>
-  <!-- Hero -->
+  <!-- ============ Hero ============ -->
   <section class="hero">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <span class="badge">Chrome / Edge 扩展 · Manifest V3</span>
-        <h1>让 AI 成为你的<br /><em>阅读与翻译助手</em></h1>
-        <p class="lead">
-          全页面翻译、划词翻译、网页总结三合一。接入任意 OpenAI 兼容接口，
-          自带配置界面，中英互译，一键恢复原文。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#steps">立即使用</a>
-          <a class="btn btn-ghost" href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">查看源码</a>
-        </div>
-        <ul class="hero-meta">
-          <li>OpenAI 兼容协议</li>
-          <li>8 种目标语言</li>
-          <li>密钥本地保存</li>
-        </ul>
-      </div>
+    <div class="container">
+      <p class="kicker">Chrome / Edge 扩展 · Manifest V3</p>
+      <h1>让 AI 成为你的<br /><em>阅读与翻译助手</em></h1>
+      <div class="hero-rule" aria-hidden="true"></div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="browser">
-          <div class="browser-bar">
-            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-            <div class="browser-url">example.com / article</div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="lead">
+            全页面翻译、划词翻译、网页总结三合一。接入任意 OpenAI 兼容接口，
+            自带配置界面，中英互译，一键恢复原文。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#steps">立即使用</a>
+            <a class="btn btn-quiet" href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">查看源码</a>
           </div>
-          <div class="browser-body">
-            <div class="line line-title"></div>
-            <div class="src-text">Machine translation has improved dramatically with large language models.</div>
-            <div class="dst-text">随着大语言模型的发展，机器翻译质量得到了显著提升。</div>
-            <div class="line"></div>
-            <div class="line line-short"></div>
-            <div class="line"></div>
-            <div class="line line-mid"></div>
-            <div class="progress">
-              <div class="progress-bar"><i></i></div>
-              <div class="progress-text">AI 正在翻译页面…  36 / 52</div>
-            </div>
-          </div>
+          <dl class="facts">
+            <div><dt>协议</dt><dd>OpenAI 兼容</dd></div>
+            <div><dt>语言</dt><dd>8 种目标语言</dd></div>
+            <div><dt>密钥</dt><dd>仅存本地</dd></div>
+          </dl>
         </div>
-        <div class="float-chip">译</div>
+
+        <!-- 真实产出示例，而非装饰性线框 -->
+        <figure class="specimen">
+          <figcaption class="specimen-cap">划词结果卡片</figcaption>
+          <p class="specimen-src" lang="en">Large language models have substantially improved the quality of machine translation.</p>
+          <p class="specimen-dst">大语言模型已显著提升机器翻译的质量。</p>
+          <div class="specimen-foot">
+            <span>EN &rarr; 中文</span>
+            <span>DeepSeek · 0.4s</span>
+          </div>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- 核心功能 -->
+  <!-- ============ 核心功能 ============ -->
   <section class="section" id="features">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">核心功能</span>
+        <p class="kicker">核心功能</p>
         <h2>三件事，一个扩展搞定</h2>
-        <p>覆盖读英文、看外文资料、做调研的全部日常场景。</p>
+        <p class="section-sub">覆盖读英文、看外文资料、做调研的全部日常场景。</p>
       </header>
 
-      <div class="grid grid-3">
-        <article class="card">
-          <span class="card-icon">译</span>
+      <div class="triptych">
+        <article class="triptych-item">
+          <span class="numeral">01</span>
           <h3>全页面翻译</h3>
           <p>自动识别网页中所有可见文本，分批并发翻译，保留 URL、邮箱与占位符。</p>
           <ul class="ticks">
@@ -98,8 +91,8 @@
           </ul>
         </article>
 
-        <article class="card">
-          <span class="card-icon">划</span>
+        <article class="triptych-item">
+          <span class="numeral">02</span>
           <h3>划词翻译</h3>
           <p>选中任意文字，浮出「翻译」按钮，即时查看译文，无需离开当前页面。</p>
           <ul class="ticks">
@@ -109,8 +102,8 @@
           </ul>
         </article>
 
-        <article class="card">
-          <span class="card-icon">总</span>
+        <article class="triptych-item">
+          <span class="numeral">03</span>
           <h3>网页总结</h3>
           <p>自动提取正文要点，右侧面板输出结构化中文总结，告别长文阅读焦虑。</p>
           <ul class="ticks">
@@ -123,63 +116,74 @@
     </div>
   </section>
 
-  <!-- 亮点 -->
+  <!-- ============ 亮点 ============ -->
   <section class="section section-alt" id="highlights">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">产品亮点</span>
+        <p class="kicker">产品亮点</p>
         <h2>为真实使用场景打磨</h2>
-        <p>不只是能跑，还要好用、安全、好看。</p>
+        <p class="section-sub">不只是能跑，还要好用、安全、好看。</p>
       </header>
 
-      <div class="grid grid-3">
-        <div class="mini">
-          <h3>接入任意兼容服务</h3>
-          <p>只要兼容 OpenAI Chat Completions 协议，填写 BaseUrl、API Key 与模型名即可使用。</p>
+      <dl class="ledger">
+        <div class="ledger-row">
+          <dt>接入任意兼容服务</dt>
+          <dd>只要兼容 OpenAI Chat Completions 协议，填写 BaseUrl、API Key 与模型名即可使用。</dd>
         </div>
-        <div class="mini">
-          <h3>中英互译，8 种语言</h3>
-          <p>中文、English、日本語、한국어、Français、Deutsch、Español、Русский。</p>
+        <div class="ledger-row">
+          <dt>中英互译，8 种语言</dt>
+          <dd>中文、English、日本語、한국어、Français、Deutsch、Español、Русский。</dd>
         </div>
-        <div class="mini">
-          <h3>密钥只存本地</h3>
-          <p>配置保存在浏览器本地存储，请求仅发往你自己的接口，不经任何第三方服务器。</p>
+        <div class="ledger-row">
+          <dt>密钥只存本地</dt>
+          <dd>配置保存在浏览器本地存储，请求仅发往你自己的接口，不经任何第三方服务器。</dd>
         </div>
-        <div class="mini">
-          <h3>界面简洁自适应</h3>
-          <p>Popup 弹窗 + 高级设置页，明暗主题跟随系统，UI 运行在 Shadow DOM 中不干扰网页。</p>
+        <div class="ledger-row">
+          <dt>界面简洁自适应</dt>
+          <dd>Popup 弹窗 + 高级设置页，明暗主题跟随系统，UI 运行在 Shadow DOM 中不干扰网页。</dd>
         </div>
-        <div class="mini">
-          <h3>大页面也稳</h3>
-          <p>长文本自动按句切分、超长段落分批请求，避免上下文溢出与错位。</p>
+        <div class="ledger-row">
+          <dt>大页面也稳</dt>
+          <dd>长文本自动按句切分、超长段落分批请求，避免上下文溢出与错位。</dd>
         </div>
-        <div class="mini">
-          <h3>失败可恢复</h3>
-          <p>接口异常时保留原文并提示原因，翻译完成后可一键还原，不破坏页面结构。</p>
+        <div class="ledger-row">
+          <dt>失败可恢复</dt>
+          <dd>接口异常时保留原文并提示原因，翻译完成后可一键还原，不破坏页面结构。</dd>
         </div>
-      </div>
+      </dl>
     </div>
   </section>
 
-  <!-- 快捷键 + 接入 -->
+  <!-- ============ 快捷键 + 接入 ============ -->
   <section class="section" id="shortcuts">
     <div class="container two-col">
       <div>
         <header class="section-head left">
-          <span class="eyebrow">效率细节</span>
+          <p class="kicker">效率细节</p>
           <h2>快捷键与右键菜单</h2>
-          <p>双手不用离开键盘，也可在 chrome://extensions/shortcuts 中自定义。</p>
+          <p class="section-sub">双手不用离开键盘，也可在 chrome://extensions/shortcuts 中自定义。</p>
         </header>
         <ul class="keys">
-          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>T</kbd></span><span>翻译当前页面</span></li>
-          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>R</kbd></span><span>恢复页面原文</span></li>
-          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>S</kbd></span><span>翻译选中文本</span></li>
-          <li><span class="kbd"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>G</kbd></span><span>总结当前页面</span></li>
+          <li>
+            <span class="combo"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>T</kbd></span>
+            <span class="combo-desc">翻译当前页面</span>
+          </li>
+          <li>
+            <span class="combo"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>R</kbd></span>
+            <span class="combo-desc">恢复页面原文</span>
+          </li>
+          <li>
+            <span class="combo"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>S</kbd></span>
+            <span class="combo-desc">翻译选中文本</span>
+          </li>
+          <li>
+            <span class="combo"><kbd>Alt</kbd><i>+</i><kbd>Shift</kbd><i>+</i><kbd>G</kbd></span>
+            <span class="combo-desc">总结当前页面</span>
+          </li>
         </ul>
       </div>
 
-      <div class="panel">
-        <span class="eyebrow">接口配置</span>
+      <div class="config">
         <h3>三步完成接入</h3>
         <pre class="code"><code>{
   "baseUrl": "https://api.deepseek.com",
@@ -191,45 +195,40 @@
     </div>
   </section>
 
-  <!-- 使用步骤 -->
+  <!-- ============ 使用步骤 ============ -->
   <section class="section section-alt" id="steps">
     <div class="container">
       <header class="section-head">
-        <span class="eyebrow">使用步骤</span>
+        <p class="kicker">使用步骤</p>
         <h2>半分钟上线</h2>
-        <p>无需构建、无需依赖，加载即用。</p>
+        <p class="section-sub">无需构建、无需依赖，加载即用。</p>
       </header>
+
       <ol class="steps">
         <li>
           <span class="step-no">1</span>
-          <div>
-            <h3>加载扩展</h3>
-            <p>打开 <code>chrome://extensions/</code>，开启「开发者模式」，点击「加载已解压的扩展程序」并选择项目目录。</p>
-          </div>
+          <h3>加载扩展</h3>
+          <p>打开 <code>chrome://extensions/</code>，开启「开发者模式」，点击「加载已解压的扩展程序」并选择项目目录。</p>
         </li>
         <li>
           <span class="step-no">2</span>
-          <div>
-            <h3>填写配置</h3>
-            <p>点击工具栏图标，在弹窗中填入 BaseUrl、API Key 与模型名称，点击「测试连接」验证。</p>
-          </div>
+          <h3>填写配置</h3>
+          <p>点击工具栏图标，在弹窗中填入 BaseUrl、API Key 与模型名称，点击「测试连接」验证。</p>
         </li>
         <li>
           <span class="step-no">3</span>
-          <div>
-            <h3>开始使用</h3>
-            <p>打开任意网页，点击「翻译本页」；选中文字即可划词翻译；点击「网页总结」提炼要点。</p>
-          </div>
+          <h3>开始使用</h3>
+          <p>打开任意网页，点击「翻译本页」；选中文字即可划词翻译；点击「网页总结」提炼要点。</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- ============ FAQ ============ -->
   <section class="section" id="faq">
     <div class="container narrow">
       <header class="section-head">
-        <span class="eyebrow">常见问题</span>
+        <p class="kicker">常见问题</p>
         <h2>你可能想知道的</h2>
       </header>
 
@@ -258,11 +257,12 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ============ CTA ============ -->
   <section class="cta">
     <div class="container cta-inner">
-      <h2>让阅读、翻译、总结都不再费时间</h2>
-      <p>开源免费，配置自己的 API Key 即可长期使用。</p>
+      <p class="kicker">开源免费</p>
+      <h2>让阅读、翻译、总结<br />都不再费时间</h2>
+      <p class="cta-sub">配置自己的 API Key 即可长期使用。</p>
       <a class="btn btn-primary btn-lg" href="https://github.com/sun969650-ai/translate" target="_blank" rel="noreferrer">前往 GitHub 仓库</a>
     </div>
   </section>

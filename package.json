@@ -6,7 +6,9 @@
   "description": "AI 智能翻译 Chrome 扩展（全页翻译 / 划词翻译 / 网页总结）",
   "scripts": {
     "test": "node tests/test-ai.mjs",
-    "test:e2e": "node tests/e2e.mjs"
+    "test:e2e": "node tests/e2e.mjs",
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy"
   },
   "devDependencies": {
     "playwright-core": "^1.49.1"

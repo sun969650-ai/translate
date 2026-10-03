@@ -6,7 +6,7 @@
 
   /* ---------- 滚动入场 ---------- */
   var targets = document.querySelectorAll(
-    '.card, .mini, .panel, .steps > li, .faq > details, .section-head'
+    '.triptych-item, .ledger-row, .config, .specimen, .facts, .steps > li, .faq > details, .section-head'
   );
   var showAll = function () {
     targets.forEach(function (el) { el.classList.add('in'); });

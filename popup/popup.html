@@ -8,96 +8,116 @@
 </head>
 <body>
   <div class="app">
-    <header class="header">
-      <div class="brand">
-        <span class="logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 5h8" /><path d="M14 5h6" /><path d="M9 3v2" />
-            <path d="M4 12h6" /><path d="M12 12h8" /><path d="M4 19h8" /><path d="M14 19h6" />
-            <path d="M20 3v18" />
-          </svg>
-        </span>
-        <div class="titles">
-          <h1>AI 智能翻译</h1>
-          <p>全页翻译 · 划词翻译 · 网页总结</p>
+    <div class="panel">
+      <header class="header">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 5h8" /><path d="M14 5h6" /><path d="M9 3v2" />
+              <path d="M4 12h6" /><path d="M12 12h8" /><path d="M4 19h8" /><path d="M14 19h6" />
+              <path d="M20 3v18" />
+            </svg>
+          </span>
+          <div class="titles">
+            <h1>AI 智能翻译</h1>
+            <p>全页翻译 · 划词翻译 · 网页总结</p>
+          </div>
         </div>
-      </div>
-      <span id="statusPill" class="pill">未配置</span>
-    </header>
+        <span id="statusPill" class="pill">未配置</span>
+      </header>
 
-    <section class="actions">
-      <button class="action primary" data-action="translatePage">
-        <span class="ico">译</span>
-        <span class="label">
-          <b>翻译本页</b>
-          <i>整页中英互译</i>
-        </span>
-      </button>
-      <button class="action" data-action="restore">
-        <span class="ico">原</span>
-        <span class="label">
-          <b>恢复原文</b>
-          <i>还原页面内容</i>
-        </span>
-      </button>
-      <button class="action" data-action="translateSelection">
-        <span class="ico">划</span>
-        <span class="label">
-          <b>划词翻译</b>
-          <i>翻译选中文本</i>
-        </span>
-      </button>
-      <button class="action" data-action="summarize">
-        <span class="ico">总</span>
-        <span class="label">
-          <b>网页总结</b>
-          <i>提炼核心要点</i>
-        </span>
-      </button>
-    </section>
+      <section class="actions">
+        <button type="button" class="action primary" data-action="translatePage">
+          <span class="ico" aria-hidden="true">译</span>
+          <span class="label">
+            <b>翻译本页</b>
+            <i>整页中英互译</i>
+          </span>
+        </button>
 
-    <section class="block">
-      <div class="block-title">语言设置</div>
-      <div class="lang-row">
-        <label class="field">
-          <span>目标语言</span>
-          <select id="targetLang"></select>
-        </label>
-        <button id="swapLang" class="ghost-btn" title="中英互换">⇄</button>
-        <label class="field">
-          <span>原文语言</span>
-          <select id="sourceLang"></select>
-        </label>
-      </div>
-    </section>
-
-    <section class="block">
-      <div class="block-title">接口设置（OpenAI 兼容）</div>
-      <label class="field stack">
-        <span>BaseUrl</span>
-        <input id="baseUrl" type="text" placeholder="https://api.deepseek.com" spellcheck="false" />
-      </label>
-      <label class="field stack">
-        <span>API Key</span>
-        <div class="secret">
-          <input id="apiKey" type="password" placeholder="sk-..." spellcheck="false" />
-          <button id="toggleKey" class="eye" type="button" title="显示/隐藏">👁</button>
+        <div class="action-pair">
+          <button type="button" class="action" data-action="translateSelection">
+            <span class="ico" aria-hidden="true">划</span>
+            <span class="label">
+              <b>划词翻译</b>
+              <i>翻译选中文本</i>
+            </span>
+          </button>
+          <button type="button" class="action" data-action="summarize">
+            <span class="ico" aria-hidden="true">总</span>
+            <span class="label">
+              <b>网页总结</b>
+              <i>提炼核心要点</i>
+            </span>
+          </button>
         </div>
-      </label>
-      <label class="field stack">
-        <span>模型</span>
-        <input id="model" type="text" placeholder="deepseek-chat" spellcheck="false" />
-      </label>
-      <div class="btn-row">
-        <button id="saveBtn" class="primary-btn">保存设置</button>
-        <button id="testBtn" class="ghost-btn">测试连接</button>
-      </div>
-    </section>
 
-    <div id="message" class="message hidden"></div>
+        <button type="button" class="action tertiary" data-action="restore">
+          <span class="ico" aria-hidden="true">原</span>
+          <span class="label">
+            <b>恢复原文</b>
+            <i>还原页面内容</i>
+          </span>
+        </button>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="section">
+        <h2 class="block-title">语言设置</h2>
+        <div class="lang-row">
+          <label class="field">
+            <span>目标语言</span>
+            <select id="targetLang"></select>
+          </label>
+          <button id="swapLang" class="ghost-btn icon-btn" type="button" title="中英互换" aria-label="中英互换">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2.5 5.5h9M9.2 3.2 11.7 5.5 9.2 7.8" />
+              <path d="M13.5 10.5h-9M6.8 8.2 4.3 10.5l2.5 2.3" />
+            </svg>
+          </button>
+          <label class="field">
+            <span>原文语言</span>
+            <select id="sourceLang"></select>
+          </label>
+        </div>
+      </section>
+
+      <hr class="rule" />
+
+      <section class="section">
+        <h2 class="block-title">接口设置（OpenAI 兼容）</h2>
+        <label class="field stack">
+          <span>BaseUrl</span>
+          <input id="baseUrl" type="text" placeholder="https://api.deepseek.com" spellcheck="false" />
+        </label>
+        <label class="field stack">
+          <span>API Key</span>
+          <div class="secret">
+            <input id="apiKey" type="password" placeholder="sk-..." spellcheck="false" />
+            <button id="toggleKey" class="eye" type="button" title="显示/隐藏" aria-label="显示或隐藏 API Key">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1.9 10S4.9 4.9 10 4.9 18.1 10 18.1 10 15.1 15.1 10 15.1 1.9 10 1.9 10Z" />
+                <circle cx="10" cy="10" r="2.4" />
+              </svg>
+            </button>
+          </div>
+        </label>
+        <label class="field stack">
+          <span>模型</span>
+          <input id="model" type="text" placeholder="deepseek-chat" spellcheck="false" />
+        </label>
+        <div class="btn-row">
+          <button id="saveBtn" class="primary-btn" type="button">保存设置</button>
+          <button id="testBtn" class="ghost-btn" type="button">测试连接</button>
+        </div>
+      </section>
+
+      <div id="message" class="message hidden"></div>
+    </div>
 
     <footer class="footer">
-      <button id="openOptions" class="link-btn">高级设置</button>
+      <button id="openOptions" class="link-btn" type="button">高级设置</button>
       <span class="version">v1.0.0</span>
     </footer>
   </div>
